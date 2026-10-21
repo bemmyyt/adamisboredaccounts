@@ -36,7 +36,7 @@ $('deleteAccount').onclick=async()=>{if(!confirm('Permanently delete your Fireba
 $('logout').onclick=async()=>{try{await signOut(auth)}catch(e){message('profileMessage',err(e))}};
 
 // Popup handoff only to trusted project origins.
-const trustedOrigins=new Set(['https://forum.adamisbored.xyz','https://adamisbored.xyz']);
+const trustedOrigins=new Set(['https://forum.adamisbored.xyz','https://test.forum.adamisbored.xyz','https://adamisbored.xyz']);
 const params=new URLSearchParams(location.search),returnOrigin=params.get('origin');
 const isHandoff=!!(window.opener&&trustedOrigins.has(returnOrigin)&&params.get('handoff')==='1');
 let handoffPending=false;
